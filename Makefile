@@ -7,7 +7,6 @@ PGXS := $(shell $(PG_CONFIG) --pgxs)
 TESTS        = $(wildcard test/sql/*.sql)
 REGRESS      = $(patsubst test/sql/%.sql,%,$(TESTS))
 REGRESS_OPTS = --inputdir=test \
-			   --load-language=plpgsql \
 			   --load-extension=$(EXTENSION) \
 			   --temp-instance=$$PWD/tmp 
 REGRESS_PREP = mktblspace
