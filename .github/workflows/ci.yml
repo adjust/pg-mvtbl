@@ -18,4 +18,8 @@ jobs:
     steps:
       - run: pg-setup ${{ matrix.pg }}
       - uses: actions/checkout@v2
-      - run: build-check
+      - run: make install
+      - run: chmod a+w $(pwd)
+      - run: su postgres -c 'make installcheck'
+      - run: cat regression.diffs
+        if: ${{ failure() }}

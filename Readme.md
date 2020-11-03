@@ -1,3 +1,5 @@
+![Build Status](https://github.com/adjust/pg-mvtbl/workflows/CI/badge.svg)
+
 # mvtbl
 
 A postgres Extension to easily move tables around tablespaces
