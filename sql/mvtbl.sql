@@ -7,6 +7,7 @@ $$
 		res bigint = 0;
 	BEGIN
 		EXECUTE format($sql$ ALTER TABLE %s SET TABLESPACE %s $sql$, tbl, tblspace);
+		RAISE NOTICE 'done moving %', tbl;
 		SELECT pg_catalog.pg_total_relation_size(tbl) INTO res;
 
 		FOR r IN SELECT 
@@ -16,6 +17,7 @@ $$
 			ORDER BY i.indisprimary DESC, i.indisunique DESC, c2.relname LOOP
 
 			EXECUTE format($sql$ ALTER INDEX %s SET TABLESPACE %s $sql$, r.iname, tblspace);
+			RAISE NOTICE 'done moving %', r.iname;
 		END LOOP;
 		RETURN res;
 	END;

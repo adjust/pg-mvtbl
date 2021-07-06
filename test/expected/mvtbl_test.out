@@ -4,12 +4,20 @@ CREATE INDEX ON test(a);
 CREATE INDEX ON test(a,b);
 CREATE INDEX ON test(c);
 SELECT pg_size_pretty(mvtbl('test','mvtbl_test_tblspace'));
+NOTICE:  done moving test
+NOTICE:  done moving test_a_b_idx
+NOTICE:  done moving test_a_idx
+NOTICE:  done moving test_c_idx
  pg_size_pretty 
 ----------------
  123 MB
 (1 row)
 
 SELECT pg_size_pretty(mvtbl('test','pg_default'));
+NOTICE:  done moving test
+NOTICE:  done moving test_a_b_idx
+NOTICE:  done moving test_a_idx
+NOTICE:  done moving test_c_idx
  pg_size_pretty 
 ----------------
  123 MB
