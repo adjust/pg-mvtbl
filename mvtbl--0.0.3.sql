@@ -1,3 +1,6 @@
+-- complain if script is sourced in psql, rather than via CREATE EXTENSION
+\echo Use "CREATE EXTENSION mvtbl" to load this file. \quit
+
 CREATE FUNCTION mvtbl(tbl text, tblspace text)
 RETURNS bigint AS
 $$
