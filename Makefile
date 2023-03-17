@@ -8,7 +8,7 @@ TESTS        = $(wildcard test/sql/*.sql)
 REGRESS      = $(patsubst test/sql/%.sql,%,$(TESTS))
 REGRESS_OPTS = --inputdir=test \
 			   --load-extension=$(EXTENSION) \
-			   --temp-instance=$$PWD/tmp 
+			   --temp-instance=$$PWD/tmp
 REGRESS_PREP = mktblspace
 SQLSRC = $(wildcard sql/*.sql)
 include $(PGXS)
@@ -21,4 +21,4 @@ $(EXTENSION)--$(EXTVERSION).sql: $(SQLSRC)
 	@cat $^ >> $@
 
 mktblspace:
-	mkdir -p /tmp/tsttblsp	
+	mkdir -p /tmp/tsttblsp

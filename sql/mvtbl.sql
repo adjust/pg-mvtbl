@@ -32,6 +32,9 @@ $$
 				res = mvtbl(tbl, tblspace);
 				EXIT;
 			EXCEPTION WHEN lock_not_available THEN
+				IF i = retries THEN
+					RAISE;
+				END IF;
 				pg_sleep(sleep_sec);
 			END;
 		END LOOP;

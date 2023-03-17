@@ -12,7 +12,10 @@ $$
                 res = mvtbl(tbl, tblspace);
                 EXIT;
             EXCEPTION WHEN lock_not_available THEN
-                pg_sleep(sleep_sec);
+                IF i = retries THEN
+                    RAISE;
+                END IF;
+                PERFORM pg_sleep(sleep_sec);
             END;
         END LOOP;
         RETURN res;
