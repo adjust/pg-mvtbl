@@ -1,0 +1,37 @@
+{
+   "name": "mvtbl",
+   "abstract": "Easily move tables around tablespaces",
+   "version": "0.0.1",
+   "license": {
+      "PostgreSQL": "http://www.postgresql.org/about/licence"
+   },
+   "provides": { 
+      "mvtbl": {
+         "file": "sql/mvtbl.sql",
+         "version": "0.0.2",
+         "abstract": "Easily move tables around tablespaces"
+      }
+   },
+   "meta-spec": {
+     "version": "0.0.2",
+     "url": "http://pgxn.org/meta/spec.txt"
+   },
+   "description": "Easily move tables around tablespaces",
+   "prereqs": {
+      "runtime": {
+        "requires": {
+           "PostgreSQL": "9.3.0"
+        }
+      }
+   },
+   "resources": {
+       "bugtracker": {
+           "web": "http://github.com/adjust/pg-mvtbl/issues"
+       },
+       "repository": {
+          "url": "git://github.com/adjust/pg-mvtbl.git",
+          "web": "http://github.com/adjust/pg-mvtbl",
+          "type": "git"
+       }
+   }
+}
