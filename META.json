@@ -1,5 +1,6 @@
 {
    "name": "mvtbl",
+   "author": "adjustgmbh",
    "abstract": "Easily move tables around tablespaces",
    "version": "0.0.2",
    "license": {
@@ -13,7 +14,7 @@
       }
    },
    "meta-spec": {
-     "version": "0.0.2",
+     "version": "1.0.0",
      "url": "http://pgxn.org/meta/spec.txt"
    },
    "description": "Easily move tables around tablespaces",
