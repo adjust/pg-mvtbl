@@ -1,7 +1,11 @@
 {
    "name": "mvtbl",
+   "author": "adjustgmbh",
    "abstract": "Easily move tables around tablespaces",
    "version": "0.0.2",
+   "maintainer" : [
+      "adjustgmbh"
+   ],
    "license": {
       "PostgreSQL": "http://www.postgresql.org/about/licence"
    },
@@ -13,14 +17,14 @@
       }
    },
    "meta-spec": {
-     "version": "0.0.2",
+     "version": "1.0.0",
      "url": "http://pgxn.org/meta/spec.txt"
    },
    "description": "Easily move tables around tablespaces",
    "prereqs": {
       "runtime": {
         "requires": {
-           "PostgreSQL": "10.0"
+           "PostgreSQL": "10.0.0"
         }
       }
    },
