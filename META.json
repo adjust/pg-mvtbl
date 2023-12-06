@@ -1,6 +1,5 @@
 {
    "name": "mvtbl",
-   "author": "adjustgmbh",
    "abstract": "Easily move tables around tablespaces",
    "version": "0.0.2",
    "maintainer" : [
