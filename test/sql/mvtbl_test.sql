@@ -8,4 +8,10 @@ CREATE INDEX ON test(c);
 SELECT pg_size_pretty(mvtbl('test','mvtbl_test_tblspace'));
 SELECT pg_size_pretty(mvtbl('test','pg_default'));
 
+SELECT pg_size_pretty(mvtbl('test','mvtbl_test_tblspace', 3, 3));
+SELECT pg_size_pretty(mvtbl('test','pg_default', 3));
+
+ALTER EXTENSION mvtbl UPDATE TO '0.0.2';
+ALTER EXTENSION mvtbl UPDATE TO '0.0.3';
+
 DROP TABLESPACE mvtbl_test_tblspace;

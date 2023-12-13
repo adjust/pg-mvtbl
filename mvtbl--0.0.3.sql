@@ -1,3 +1,6 @@
+-- complain if script is sourced in psql, rather than via CREATE EXTENSION
+\echo Use "CREATE EXTENSION mvtbl" to load this file. \quit
+
 CREATE FUNCTION mvtbl(tbl text, tblspace text)
 RETURNS bigint AS
 $$
@@ -35,7 +38,7 @@ $$
 				IF i = retries THEN
 					RAISE;
 				END IF;
-				pg_sleep(sleep_sec);
+				PERFORM pg_sleep(sleep_sec);
 			END;
 		END LOOP;
 		RETURN res;
