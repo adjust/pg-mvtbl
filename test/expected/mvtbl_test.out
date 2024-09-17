@@ -15,4 +15,18 @@ SELECT pg_size_pretty(mvtbl('test','pg_default'));
  123 MB
 (1 row)
 
+SELECT pg_size_pretty(mvtbl('test','mvtbl_test_tblspace', 3, 3));
+ pg_size_pretty 
+----------------
+ 123 MB
+(1 row)
+
+SELECT pg_size_pretty(mvtbl('test','pg_default', 3));
+ pg_size_pretty 
+----------------
+ 123 MB
+(1 row)
+
+ALTER EXTENSION mvtbl UPDATE TO '0.0.2';
+ALTER EXTENSION mvtbl UPDATE TO '0.0.3';
 DROP TABLESPACE mvtbl_test_tblspace;
